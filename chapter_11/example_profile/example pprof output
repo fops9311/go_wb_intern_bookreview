@@ -1,0 +1,43 @@
+(pprof) top            
+Showing nodes accounting for 2.93s, 95.75% of 3.06s total
+Dropped 30 nodes (cum <= 0.02s)
+Showing top 10 nodes out of 57
+      flat  flat%   sum%        cum   cum%
+     1.22s 39.87% 39.87%      1.60s 52.29%  main.N2 (inline)
+     0.72s 23.53% 63.40%      0.93s 30.39%  main.N1
+     0.60s 19.61% 83.01%      0.60s 19.61%  runtime.udiv
+     0.11s  3.59% 86.60%      0.11s  3.59%  runtime.stdcall1
+     0.08s  2.61% 89.22%      0.08s  2.61%  runtime.cgocall
+     0.07s  2.29% 91.50%      0.07s  2.29%  runtime.memclrNoHeapPointers
+     0.04s  1.31% 92.81%      2.81s 91.83%  main.main
+     0.04s  1.31% 94.12%      0.04s  1.31%  runtime.mapaccess1_fast32
+     0.03s  0.98% 95.10%      0.03s  0.98%  runtime._LostSIGPROFDuringAtomic64
+     0.02s  0.65% 95.75%      0.03s  0.98%  runtime.checkTimers
+(pprof) top10
+Showing nodes accounting for 2.93s, 95.75% of 3.06s total
+Dropped 30 nodes (cum <= 0.02s)
+Showing top 10 nodes out of 57
+      flat  flat%   sum%        cum   cum%
+     1.22s 39.87% 39.87%      1.60s 52.29%  main.N2 (inline)
+     0.72s 23.53% 63.40%      0.93s 30.39%  main.N1
+     0.60s 19.61% 83.01%      0.60s 19.61%  runtime.udiv
+     0.11s  3.59% 86.60%      0.11s  3.59%  runtime.stdcall1
+     0.08s  2.61% 89.22%      0.08s  2.61%  runtime.cgocall
+     0.07s  2.29% 91.50%      0.07s  2.29%  runtime.memclrNoHeapPointers
+     0.04s  1.31% 92.81%      2.81s 91.83%  main.main
+     0.04s  1.31% 94.12%      0.04s  1.31%  runtime.mapaccess1_fast32
+     0.03s  0.98% 95.10%      0.03s  0.98%  runtime._LostSIGPROFDuringAtomic64
+     0.02s  0.65% 95.75%      0.03s  0.98%  runtime.checkTimers
+(pprof) list main.N2
+Total: 3.06s
+ROUTINE ======================== main.N2 in C:\Users\fops9\OneDrive\Документы\GitHub\go_wb_intern_bookreview\chapter_11\example_profile\main.go
+     1.22s      1.60s (flat, cum) 52.29% of Total
+         .          .    113:func N2(n int) bool {
+     1.05s      1.05s    114:   for i := 2; i < n; i++ {
+     170ms      550ms    115:           if (n % i) == 0 {
+         .          .    116:                   return false
+         .          .    117:           }
+         .          .    118:   }
+         .          .    119:   return true
+         .          .    120:}
+(pprof) exit
